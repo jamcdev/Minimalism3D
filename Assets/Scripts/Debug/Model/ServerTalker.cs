@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using SimpleJSON;
 
 public class ServerTalker : MonoBehaviour
 {
@@ -10,9 +11,7 @@ public class ServerTalker : MonoBehaviour
     {
         // Make a web request to get info from server. JSON/Text response. 
         StartCoroutine(GetWebData("http://localhost:8000/user/" , "myAwesomeID"));
-        // Parse JSON 
 
-        // Output to console. 
     }
 
     IEnumerator GetWebData(string address, string myID)
@@ -27,8 +26,18 @@ public class ServerTalker : MonoBehaviour
             yield break;
         } else {
             Debug.Log(www.downloadHandler.text);
+            ProcessServerResponse(www.downloadHandler.text);
         }
 
 
+    }
+
+    void ProcessServerResponse(string rawResponse) {
+        // Parse JSON 
+        JSONNode node = JSON.Parse(rawResponse);
+
+        // Output to console. 
+        Debug.Log("Username: " + node["username"]);
+        Debug.Log("Misc Data: " + node["someArray"][1][0]);
     }
 }

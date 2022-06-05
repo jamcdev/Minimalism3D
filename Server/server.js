@@ -13,7 +13,11 @@ app.get("/user/:id", (req,res)=>{
         userID: req.params["id"],
         username: "user1",
         wins:18,
-        losses:1000
+        losses:1000,
+        someArray:[
+            {name:"foo", value:2.5},
+            {name:"bar", value:3.0},
+        ]
     };
 
     res.send(dummyData);
