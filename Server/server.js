@@ -8,8 +8,9 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 
-app.get("/user/", (req,res)=>{
+app.get("/user/:id", (req,res)=>{
     var dummyData = {
+        userID: req.params["id"],
         username: "user1",
         wins:18,
         losses:1000
