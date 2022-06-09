@@ -374,7 +374,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   directionText: {fileID: 1602199540}
   cameraTarget: {fileID: 756350261}
+  mainCamera: {fileID: 963194227}
   scrollingSpeed: 0.005
+  zoomingSpeed: 0.01
 --- !u!1 &485790587
 GameObject:
   m_ObjectHideFlags: 0
