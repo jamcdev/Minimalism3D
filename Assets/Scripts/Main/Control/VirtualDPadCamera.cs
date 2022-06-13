@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class VirtualDPadCamera : MonoBehaviour
 {
     public Text directionText;
+    public Text zoomTextInfo;
     private Touch touchObj;
     private Vector2 touchStartCoord, touchEndCoord;
     private string directionString;
@@ -15,6 +16,7 @@ public class VirtualDPadCamera : MonoBehaviour
     public Camera mainCamera;
     public float scrollingSpeed = 0.005f;
     public float zoomingSpeed = 0.01f;
+    float initialDisplacement = 0.0f; // For first zoom distance between two fingers.
 
     // Update is called once per frame
     void Update()
@@ -92,7 +94,7 @@ public class VirtualDPadCamera : MonoBehaviour
 
             Vector2 touchStartCoord_1, touchEndCoord_1, touchStartCoord_2, touchEndCoord_2;
 
-            float initialDisplacement = 0.0f;
+            float currentDisplacement = 0.0f;
 
             if (touchObj_1.phase == TouchPhase.Began || touchObj_2.phase == TouchPhase.Began)
             {
@@ -110,7 +112,7 @@ public class VirtualDPadCamera : MonoBehaviour
                 touchEndCoord_1 = touchObj_1.position;
                 touchEndCoord_2 = touchObj_2.position;
 
-                float currentDisplacement = Vector2.Distance(touchEndCoord_1, touchEndCoord_2);
+                    currentDisplacement = Vector2.Distance(touchEndCoord_1, touchEndCoord_2);
 
                 if (currentDisplacement > initialDisplacement)
                 {
@@ -125,6 +127,7 @@ public class VirtualDPadCamera : MonoBehaviour
             }
 
             directionText.text = directionString;
+            zoomTextInfo.text = initialDisplacement.ToString();
         }
     }
 }
