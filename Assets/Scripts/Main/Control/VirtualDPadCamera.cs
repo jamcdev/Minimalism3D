@@ -85,6 +85,7 @@ public class VirtualDPadCamera : MonoBehaviour
 
 
                 directionText.text = directionString;
+                //Debug.Log(directionString);
             }
         }
         else if (Input.touchCount == 2) // Zooming in camera. 
