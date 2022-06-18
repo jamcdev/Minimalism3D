@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "RF8N11WMZ0L",
     "m_SelectedPackage": {
         "deviceId": "RF8N11WMZ0L",
-        "name": "com.DefaultCompany.Minimalism3D",
-        "processId": 9542,
+        "name": "com.android.game",
+        "processId": 24963,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -102,6 +102,192 @@
             "deviceId": "RF8N11WMZ0L",
             "name": "com.DefaultCompany.Minimalism3D",
             "processId": 9542,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 18101,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 16239,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 17849,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 4954,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 6878,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 8506,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 9063,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 9781,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 11110,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 11746,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 12210,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 13031,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 13899,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 16856,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 17567,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 18700,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.DefaultCompany.Minimalism3D",
+            "processId": 19246,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 21605,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 25894,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 27675,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 29101,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 30060,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 31579,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 32727,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 7905,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 9932,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 20792,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 21697,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 22805,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 23710,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 24963,
             "exited": false
         }
     ],

@@ -37,7 +37,7 @@ public class PutPlaceholder : MonoBehaviour
 
                 float threshold = 100;
 
-                if (Mathf.Abs(dx) < threshold && Mathf.Abs(dy) < threshold && timeHeldDown > 2)
+                if (Mathf.Abs(dx) < threshold && Mathf.Abs(dy) < threshold && timeHeldDown > 3)
                 {
                     timeHeldDown = 0.0f;
 

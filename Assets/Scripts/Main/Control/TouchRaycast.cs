@@ -14,6 +14,13 @@ public class TouchRaycast : MonoBehaviour
     private Vector2 touchStartCoord, touchEndCoord;
     Ray touchRay;
     RaycastHit touchRayHit;
+    public SceneManagerAsync sceneManagerAsync;
+
+    void Start()
+    {
+        //SceneManager.LoadScene(touchRaycastString, LoadSceneMode.Additive);
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -51,7 +58,12 @@ public class TouchRaycast : MonoBehaviour
 
                         // Scene change to MTR name.
 
-                        SceneManager.LoadScene(touchRaycastString);
+                        //SceneManager.LoadScene(touchRaycastString);
+
+                        // Use a coroutine to load the Scene in the background
+                        //StartCoroutine(LoadYourAsyncScene(touchRaycastString));
+
+                        sceneManagerAsync.LoadScene(touchRaycastString);
                     }
                     else
                     {
@@ -64,6 +76,22 @@ public class TouchRaycast : MonoBehaviour
 
                 touchRaycastText.text = touchRaycastString;
             }
+        }
+    }
+
+    IEnumerator LoadYourAsyncScene(string touchRaycastString)
+    {
+        // The Application loads the Scene in the background as the current Scene runs.
+        // This is particularly good for creating loading screens.
+        // You could also load the Scene by using sceneBuildIndex. In this case Scene2 has
+        // a sceneBuildIndex of 1 as shown in Build Settings.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(touchRaycastString);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
         }
     }
 }
