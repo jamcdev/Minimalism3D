@@ -1,17 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraTaker : MonoBehaviour
 {
     WebCamTexture webCamTexture;
-    public GameObject photoPlane;
+    //public GameObject photoPlane;
+    public RawImage rawImage;
 
     void Start()
     {
         webCamTexture = new WebCamTexture();
         //GetComponent<Renderer>().material.mainTexture = webCamTexture; //Add Mesh Renderer to the GameObject to which this script is attached to
-        photoPlane.GetComponent<Renderer>().material.mainTexture = webCamTexture;
+
+        // For object.
+        //photoPlane.GetComponent<Renderer>().material.mainTexture = webCamTexture;
+
+        // For UI RawImage
+        rawImage.texture = webCamTexture;
+        rawImage.material.mainTexture = webCamTexture;
+
+
         webCamTexture.Play();
     }
 
