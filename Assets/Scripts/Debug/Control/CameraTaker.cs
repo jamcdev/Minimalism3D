@@ -25,6 +25,11 @@ public class CameraTaker : MonoBehaviour
         webCamTexture.Play();
     }
 
+    public void startTakePhotoCoroutine()
+    {
+        StartCoroutine(TakePhoto());
+    }
+
     IEnumerator TakePhoto()  // Start this Coroutine on some button click
     {
 
@@ -39,10 +44,18 @@ public class CameraTaker : MonoBehaviour
         photo.SetPixels(webCamTexture.GetPixels());
         photo.Apply();
 
+        // Freeze photoFrame
+        rawImage.texture = photo;
+
+        // save static photoFrame data
+        //FormData.itemPhoto = photo;
+
         ////Encode to a PNG
-        //byte[] bytes = photo.EncodeToPNG();
+        byte[] bytes = photo.EncodeToPNG();
         ////Write out the PNG. Of course you have to substitute your_path for something sensible
         //File.WriteAllBytes(your_path + "photo.png", bytes);
+
+        FormData.itemPhoto = bytes;
     }
 
     Texture2D rotateTexture(Texture2D originalTexture, bool clockwise)
