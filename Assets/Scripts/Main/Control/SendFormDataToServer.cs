@@ -6,10 +6,13 @@ using SimpleJSON;
 
 public class SendFormDataToServer : MonoBehaviour
 {
+    public GameObject formDataObject;
+    FormData formData;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        formData = formDataObject.GetComponent<FormData>();
     }
 
     // Update is called once per frame
@@ -19,21 +22,17 @@ public class SendFormDataToServer : MonoBehaviour
     }
 
     // Send png photo, nickname, phonenumber, time.
-    IEnumerator PostWebData(string address, string myID)
+    public IEnumerator PostWebData(string address, string myID)
     {
         Debug.Log("Sending data.");
 
-        // This only sends data like data=data1
-
-        //WWWForm form = new WWWForm();
-        //form.AddField("myField", "myData");
-        //form.AddField("myField2", "myData2");
-        //UnityWebRequest www = UnityWebRequest.Post(address + myID, );
-
-
         // NB: double quoted needed inside brackets. Probably best to use a class. 
 
-        var srcStr = "{\"test\": \"test2\"}";
+        // Convert formdata to json;
+        var srcStr = formData.SaveToString();
+        Debug.Log(srcStr);
+
+        //var srcStr = "{\"test\": \"test2\"}";
         byte[] postData = System.Text.Encoding.UTF8.GetBytes(srcStr);
         var www = new UnityWebRequest(address + myID, UnityWebRequest.kHttpVerbPOST);
         www.chunkedTransfer = false;

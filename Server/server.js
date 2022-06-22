@@ -35,7 +35,7 @@ app.post("/test/:id", (req, res) => {
         req.on('end', function () {
             jsonString_parsed = JSON.parse(jsonString)
             console.log(jsonString_parsed);
-            console.log((jsonString_parsed["test"]));
+            // console.log((jsonString_parsed["test"]));
         });
     }
 });

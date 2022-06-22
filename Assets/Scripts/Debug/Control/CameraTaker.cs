@@ -55,7 +55,10 @@ public class CameraTaker : MonoBehaviour
         ////Write out the PNG. Of course you have to substitute your_path for something sensible
         //File.WriteAllBytes(your_path + "photo.png", bytes);
 
-        FormData.itemPhoto = bytes;
+        //Convert byte[] to string base 64
+        string photoStringb64 = System.Convert.ToBase64String(bytes);
+
+        FormData.itemPhoto = photoStringb64;
     }
 
     Texture2D rotateTexture(Texture2D originalTexture, bool clockwise)

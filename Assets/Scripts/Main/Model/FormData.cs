@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class FormData : MonoBehaviour
 {
-    public static byte[] itemPhoto;
+    public static string itemPhoto;
     public static string itemNickName;
     public static string itemPhoneNumber;
     public static string itemTimeForPickup;
 
-    // Start is called before the first frame update
-    void Start()
+    public string itemPhotoJSON;
+    public string itemNickNameJSON;
+    public string itemPhoneNumberJSON;
+    public string itemTimeForPickupJSON;
+
+    public string SaveToString()
     {
-        
+        // Manually save static to non-static for json to work. 
+        itemPhotoJSON = itemPhoto;
+        itemNickNameJSON = itemNickName;
+        itemPhoneNumberJSON = itemPhoneNumber;
+        itemTimeForPickupJSON = itemTimeForPickup;
+
+        return JsonUtility.ToJson(this);
+        //return itemPhoto;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 54303654}
+  - component: {fileID: 54303655}
   m_Layer: 0
   m_Name: SendFormDataToServer
   m_TagString: Untagged
@@ -153,6 +154,19 @@ Transform:
   m_Father: {fileID: 1289195796}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &54303655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54303653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413dc32bf4d0b244d8c0f9f7397b8b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  formDataObject: {fileID: 114312138}
 --- !u!1 &114312138
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,6 +210,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c470e425ef13fb438c87c0496148145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPhotoJSON: 
+  itemNickNameJSON: 
+  itemPhoneNumberJSON: 
+  itemTimeForPickupJSON: 
 --- !u!1 &147559443
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,6 +3197,7 @@ MonoBehaviour:
   nickName: {fileID: 1984112606}
   phoneNumber: {fileID: 1528893115}
   timeForPickup: {fileID: 2119018516}
+  sendFormDataToServerObject: {fileID: 54303653}
 --- !u!1 &1821902731
 GameObject:
   m_ObjectHideFlags: 0
