@@ -28,7 +28,7 @@ public class SendFormDataToServer : MonoBehaviour
 
         // NB: double quoted needed inside brackets. Probably best to use a class. 
 
-        // Convert formdata to json;
+        // Convert all formdata to json;
         var srcStr = formData.SaveToString();
         Debug.Log(srcStr);
 
