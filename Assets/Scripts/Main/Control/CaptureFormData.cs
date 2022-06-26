@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System;
 
 public class CaptureFormData : MonoBehaviour
 {
@@ -27,10 +29,18 @@ public class CaptureFormData : MonoBehaviour
     // Saves form data, send and close. 
     public void SaveFormData()
     {
+        Scene scene = SceneManager.GetActiveScene();
+
         // FormData.itemPhoto saved in CameraTaker.cs
         FormData.itemNickName = nickName.text;
         FormData.itemPhoneNumber = phoneNumber.text;
         FormData.itemTimeForPickup = timeForPickup.text;
+        //FormData.itemX = saved in PutPlaceholder.cs
+        //FormData.itemY = saved in PutPlaceholder.cs
+        FormData.itemStation = scene.name;
+        FormData.itemTimePosted = System.DateTime.UtcNow.ToString();
+        Debug.Log(FormData.itemTimePosted);
+
 
         //Debug.Log(FormData.itemPhoto);
 

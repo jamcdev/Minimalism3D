@@ -67,6 +67,9 @@ public class PutPlaceholder : MonoBehaviour
                             // Scene change to MTR name. (Change to item infomation, or add photo)
                             //SceneManager.LoadScene(touchRaycastString);
                             postManager.GetComponent<PostManager>().showCanvasPost();
+
+                            FormData.itemX = touchRayHit.point.x;
+                            FormData.itemY = touchRayHit.point.y;
                         }
                     }
                     else
