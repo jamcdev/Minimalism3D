@@ -6,11 +6,11 @@ public class FaceNormalToCamera : MonoBehaviour
 {
     public Camera target;
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-
-    //}
+    // Start is called before the first frame update
+    void Start()
+    {
+        target = Camera.main;
+    }
 
     //// Update is called once per frame
     //void Update()

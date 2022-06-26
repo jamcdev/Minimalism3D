@@ -14,13 +14,7 @@ var mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/testdb", { useNewUrlParser: true });
 var Schema = mongoose.Schema;
 
-// Setup MongoClient to get documents from DB.
-
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb+srv://admin:passpass@cluster0.za92g.mongodb.net/test";
-
 // Setup Post Schema
-
 var ItemPostSchema = new Schema({
     itemPhoto: String,
     itemNickName: String,
@@ -96,25 +90,7 @@ app.post("/test/:id", (req, res) => {
 
 });
 
-// Get all documents from items
 
-app.get("/items/:id", (req, res) => {
-
-    MongoClient.connect(url, function (err, db) {
-        if (err)
-            throw error;
-        var dbo = db.db("test");
-        dbo.collection("itemposts").find({}).toArray(function (err, result) {
-            if (err)
-                throw err;
-            console.log(result);
-            res.send(result);
-            db.close();
-        });
-    });
-
-    // res.send(items);
-});
 
 // Start server.
 
