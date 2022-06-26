@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "RF8N11WMZ0L",
         "name": "com.android.game",
-        "processId": 22594,
+        "processId": 15302,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -402,6 +402,12 @@
             "deviceId": "RF8N11WMZ0L",
             "name": "com.android.game",
             "processId": 22594,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 15302,
             "exited": false
         }
     ],

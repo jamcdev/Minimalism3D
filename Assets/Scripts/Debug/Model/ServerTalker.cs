@@ -10,7 +10,8 @@ public class ServerTalker : MonoBehaviour
     void Start()
     {
         // Make a web request to get info from server. JSON/Text response. 
-        StartCoroutine(GetWebData("http://localhost:8000/user/" , "myAwesomeID"));
+        //StartCoroutine(GetWebData("http://localhost:8000/user/" , "myAwesomeID"));
+        StartCoroutine(GetWebData("https://minimal-server.herokuapp.com/user/", "myAwesomeID"));
 
     }
 

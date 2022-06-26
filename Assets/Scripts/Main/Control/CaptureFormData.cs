@@ -47,7 +47,7 @@ public class CaptureFormData : MonoBehaviour
         // Send Data to Server
         // Server saves to database
 
-        StartCoroutine(sendFormDataToServer.PostWebData("http://localhost:8000/test/", "user1"));
+        StartCoroutine(sendFormDataToServer.PostWebData("https://minimal-server.herokuapp.com/test/", "user1"));
     }
 
 
