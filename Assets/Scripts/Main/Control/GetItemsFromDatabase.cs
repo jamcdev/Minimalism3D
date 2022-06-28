@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using SimpleJSON;
+using System;
 
 public class GetItemsFromDatabase : MonoBehaviour
 {
@@ -46,7 +47,18 @@ public class GetItemsFromDatabase : MonoBehaviour
 
         for(int i = 0; i < node.Count; i++)
         {
-            Instantiate(photoFrame, new Vector3(node[i]["itemX"], 0.05f , node[i]["itemY"]), Quaternion.identity);
+            //Instantiate(photoFrame, new Vector3(node[i]["itemX"], 0.05f , node[i]["itemY"]), Quaternion.identity);
+
+            // Convert images 
+            byte[] imageBytes = Convert.FromBase64String(node[i]["itemPhoto"]);
+            Texture2D tex = new Texture2D(2, 2);
+            tex.LoadImage(imageBytes);
+
+            //Sprite sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
+            GameObject cube = Instantiate(photoFrame, new Vector3(node[i]["itemX"], 0.05f, node[i]["itemY"]), Quaternion.identity);
+
+            Material mat = cube.GetComponent<Renderer>().material;
+            mat.mainTexture = tex;
         }
     }
 }
