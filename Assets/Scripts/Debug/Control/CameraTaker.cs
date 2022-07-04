@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CameraTaker : MonoBehaviour
 {
     WebCamTexture webCamTexture;
-    //public GameObject photoPlane;
+    //public GameObject photoPlane;z
     public RawImage rawImage;
 
     void Start()

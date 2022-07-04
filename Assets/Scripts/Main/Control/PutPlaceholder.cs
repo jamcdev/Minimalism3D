@@ -61,7 +61,8 @@ public class PutPlaceholder : MonoBehaviour
                         if(timeHeldDown > 3 && numPlaceholders < 1)
                         {
                             numPlaceholders++;
-                            Instantiate(RedBox, touchRayHit.point, Quaternion.identity);
+                            // Box causes select item to pop up.
+                            //Instantiate(RedBox, touchRayHit.point, Quaternion.identity);
                             Handheld.Vibrate();
 
                             // Scene change to MTR name. (Change to item infomation, or add photo)
@@ -69,7 +70,9 @@ public class PutPlaceholder : MonoBehaviour
                             postManager.GetComponent<PostManager>().showCanvasPost();
 
                             FormData.itemX = touchRayHit.point.x;
-                            FormData.itemY = touchRayHit.point.y;
+                            FormData.itemY = touchRayHit.point.z;
+                            Debug.Log("FormData.itemX " + FormData.itemX);
+                            Debug.Log("FormData.itemY " + FormData.itemY);
                         }
                     }
                     else

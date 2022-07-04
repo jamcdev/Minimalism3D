@@ -1,4 +1,5 @@
-// Touch screen to send raycast and interact with collsion objects. s
+// Touch screen to send raycast and interact with collsion objects. 
+// This is more for the main MTR screen to choose mtr state and change scenes.
 
 using System.Collections;
 using System.Collections.Generic;

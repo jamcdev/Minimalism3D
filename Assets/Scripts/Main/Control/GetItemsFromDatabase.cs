@@ -40,6 +40,9 @@ public class GetItemsFromDatabase : MonoBehaviour
         // Parse JSON 
         JSONNode node = JSON.Parse(rawResponse);
 
+        // Save to static variable
+        ItemsFromDatabase.avaliableItems = node;
+
         // Output to console. 
         //Debug.Log(node[0]);
         Debug.Log(node.Count);
@@ -56,7 +59,7 @@ public class GetItemsFromDatabase : MonoBehaviour
 
             //Sprite sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f), 100.0f);
             GameObject cube = Instantiate(photoFrame, new Vector3(node[i]["itemX"], 0.05f, node[i]["itemY"]), Quaternion.identity);
-
+            cube.name = node[i]["_id"];
             Material mat = cube.GetComponent<Renderer>().material;
             mat.mainTexture = tex;
         }
