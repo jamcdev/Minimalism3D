@@ -52,21 +52,23 @@ public class TouchRaycastItem : MonoBehaviour
 
                         // Check that item is NOT "HKU_Station"
 
-                        if (touchRayHit.collider.gameObject.name == "HKU_Station");
+                        if (touchRayHit.collider.gameObject.name != "HKU_Station")
+                        {
 
-                        // Get item from array from database.
-                        // OR get texture from collided object
-                        Texture2D mat = (Texture2D)touchRayHit.collider.gameObject.GetComponent<Renderer>().material.mainTexture;
+                            // Get item from array from database.
+                            // OR get texture from collided object
+                            Texture2D mat = (Texture2D)touchRayHit.collider.gameObject.GetComponent<Renderer>().material.mainTexture;
 
-                        // Assign photo texture to rawImage of Canvas.
+                            // Assign photo texture to rawImage of Canvas.
 
-                        //rawImage.material = mat;
-                        rawImage.texture = mat;
-                        //rawImage.material.mainTexture = mat.mainTexture;
+                            //rawImage.material = mat;
+                            rawImage.texture = mat;
+                            //rawImage.material.mainTexture = mat.mainTexture;
 
-                        // Show Canvas.
+                            // Show Canvas.
 
-                        canvasAvaliableItem.SetActive(true);
+                            canvasAvaliableItem.SetActive(true);
+                        }
 
                     }
                     else

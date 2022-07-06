@@ -32,18 +32,9 @@ var ItemPostSchema = new Schema({
     itemTimePosted: String,
 })
 
-var UserDataSchema = new Schema({
-    deviceID: String,
-    partnerID: String,
-    committed: Boolean,
-    karma: Number,
-    previousPunishment: Number,
-})
-
 // Link Schema to collection.
 
 var ItemPost = mongoose.model('ItemPost', ItemPostSchema);
-var UserData = mongoose.model('UserData', UserDataSchema);
 
 // Homepage
 
@@ -123,42 +114,6 @@ app.get("/items/:id", (req, res) => {
     });
 
     // res.send(items);
-});
-
-// Send NEW user device ID to database
-
-app.post("/userData/:id", (req, res) => {
-    if (req.method == 'POST') {
-        var jsonString = '';
-
-        req.on('data', function (data) {
-            jsonString += data;
-        });
-
-        req.on('end', function () {
-            // jsonString_parsed = JSON.parse(jsonString)
-            // console.log(jsonString_parsed);
-            // console.log((jsonString_parsed["test"]));
-            console.log(jsonString); // has ID plaintext
-
-            // Save Post to Database.
-            UserData.create(
-                {
-                    deviceID: jsonString,
-                    partnerID: "",
-                    committed: false,
-                    karma: 1,
-                    previousPunishment: 1
-                },
-                (error, itemPost) => {
-                    console.log("Error was: " + error);
-                    console.log(itemPost);
-                }
-            )
-
-        });
-    }
-
 });
 
 // Start server.
