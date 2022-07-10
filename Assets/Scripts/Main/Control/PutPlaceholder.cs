@@ -16,9 +16,22 @@ public class PutPlaceholder : MonoBehaviour
     private int numPlaceholders = 0;
     public GameObject postManager;
 
+    bool isPlaceNowToggled;
+
+    public TokenManager tokenManager;
+
+    public GameObject redPlaceholder;
+
     private void Start()
     {
         timeHeldDown = 0.0f;
+        PlayerInfo.tokens = 1;
+        isPlaceNowToggled = false;
+    }
+
+    public void togglePlace()
+    {
+        isPlaceNowToggled = true;
     }
 
     // Update is called once per frame
@@ -54,15 +67,23 @@ public class PutPlaceholder : MonoBehaviour
 
                     if (Physics.Raycast(touchRay.origin, touchRay.direction, out touchRayHit, Mathf.Infinity))
                     {
-                        Debug.Log(touchRayHit.point);
+                        Debug.Log("PutPlaceholder: touchRayHit.point: " + touchRayHit.point);
                         touchRaycastString = touchRayHit.collider.gameObject.name;
 
                         timeHeldDown += Time.deltaTime;
-                        if(timeHeldDown > 3 && numPlaceholders < 1)
+                        //if(timeHeldDown > 3 && numPlaceholders < 1)
+                        Debug.Log("PutPlaceholder: Player.tokens " + PlayerInfo.tokens);
+                        Debug.Log("PutPlaceholder: isPlaceNowToggled " + isPlaceNowToggled);
+                        if (PlayerInfo.tokens > 0 && isPlaceNowToggled == true)
                         {
-                            numPlaceholders++;
+                            //numPlaceholders++;
+                            isPlaceNowToggled = false;
+                            PlayerInfo.tokens--;
+                            tokenManager.updateTokenText();
+
+
                             // Box causes select item to pop up.
-                            //Instantiate(RedBox, touchRayHit.point, Quaternion.identity);
+                            redPlaceholder = Instantiate(RedBox, touchRayHit.point, Quaternion.identity);
                             Handheld.Vibrate();
 
                             // Scene change to MTR name. (Change to item infomation, or add photo)

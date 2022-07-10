@@ -7,6 +7,8 @@ public class PostManager : MonoBehaviour
     public GameObject CanvasPost;
     public GameObject CanvasPostAvaliableItems;
 
+    public PutPlaceholder putPlaceholder;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,17 @@ public class PostManager : MonoBehaviour
     {
         CanvasPost.SetActive(false);
         CanvasPostAvaliableItems.SetActive(false);
+
+    }
+
+    public void cancelAndHideCanvasPost()
+    {
+        CanvasPost.SetActive(false);
+        CanvasPostAvaliableItems.SetActive(false);
+
+        // hide red box since its not being posted.
+        PlayerInfo.tokens++; // return token
+        Destroy(putPlaceholder.redPlaceholder);
     }
 
     public void showCanvasPost()

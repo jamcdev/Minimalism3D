@@ -31,8 +31,6 @@ public class GetItemsFromDatabase : MonoBehaviour
             Debug.Log(www.downloadHandler.text);
             ProcessServerResponse(www.downloadHandler.text);
         }
-
-
     }
 
     void ProcessServerResponse(string rawResponse)
@@ -62,6 +60,12 @@ public class GetItemsFromDatabase : MonoBehaviour
             cube.name = node[i]["_id"];
             Material mat = cube.GetComponent<Renderer>().material;
             mat.mainTexture = tex;
+
+            cube.GetComponent<ItemClass>().itemPhoto = node[i]["itemPhoto"];
+            cube.GetComponent<ItemClass>().itemNickName = node[i]["itemNickName"];
+            cube.GetComponent<ItemClass>().itemPhoneNumber = node[i]["itemPhoneNumber"];
+            cube.GetComponent<ItemClass>().itemTimeForPickup = node[i]["itemTimeForPickup"];
+            cube.GetComponent<ItemClass>().itemStation = node[i]["itemStation"];
         }
     }
 }

@@ -15,8 +15,17 @@ public class TouchRaycastItem : MonoBehaviour
     // Display selected image on canvas.
     public RawImage rawImage;
 
+    public Text timePickupLabel;
+    public Text PhoneNumberLabel;
+    public GameObject avaliableItemCanvas;
+    public GameObject infoCanvas;
+    public GameObject claimButtonToHide;
+    GameObject cube;
+
     // Canvas
     public GameObject canvasAvaliableItem;
+
+    public TokenManager tokenManager;
 
     void Update()
     {
@@ -65,8 +74,11 @@ public class TouchRaycastItem : MonoBehaviour
                             rawImage.texture = mat;
                             //rawImage.material.mainTexture = mat.mainTexture;
 
-                            // Show Canvas.
+                            // Get Gameobject properties
+                            cube = touchRayHit.collider.gameObject;
+                            timePickupLabel.text = cube.GetComponent<ItemClass>().itemTimeForPickup;
 
+                            // Show Canvas.
                             canvasAvaliableItem.SetActive(true);
                         }
 
@@ -79,5 +91,31 @@ public class TouchRaycastItem : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ClaimItem()
+    {
+        if(PlayerInfo.tokens > 0)
+        {
+            PlayerInfo.tokens--;
+            tokenManager.updateTokenText();
+
+            PhoneNumberLabel.text = cube.GetComponent<ItemClass>().itemPhoneNumber;
+            claimButtonToHide.SetActive(false);
+            infoCanvas.SetActive(true);
+
+            // update database.
+        }
+        else
+        {
+            Debug.Log("Not enough tokens!");
+        }
+    }
+
+    public void ClosePanel()
+    {
+        avaliableItemCanvas.SetActive(false);
+        claimButtonToHide.SetActive(true);
+        infoCanvas.SetActive(false);
     }
 }

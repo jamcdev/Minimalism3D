@@ -38,6 +38,9 @@ var UserDataSchema = new Schema({
     committed: Boolean,
     karma: Number,
     previousPunishment: Number,
+    phoneNumber: Number,
+    itemID: String,
+    tokens: Number,
 })
 
 // Link Schema to collection.
@@ -148,13 +151,72 @@ app.post("/userData/:id", (req, res) => {
                     partnerID: "",
                     committed: false,
                     karma: 1,
-                    previousPunishment: 1
+                    previousPunishment: 1,
+                    phoneNumber: 0,
+                    itemID: "",
+                    tokens: 1,
                 },
                 (error, itemPost) => {
                     console.log("Error was: " + error);
                     console.log(itemPost);
                 }
             )
+
+        });
+    }
+
+});
+
+// Get existing user details
+
+app.get("/userData/:deviceID", (req, res) => {
+    var deviceID = req.params["deviceID"];
+    
+    MongoClient.connect(url, function (err, db) {
+        if (err)
+            throw error;
+        var dbo = db.db("test");
+        var query = {"deviceID":deviceID};
+        dbo.collection("userdatas").find(query).toArray(function (err, result) {
+            if (err)
+                throw err;
+            console.log(result);
+            res.send(result);
+            db.close();
+        });
+    });
+
+    // res.send(items);
+});
+
+// Update server with new tokens.
+app.post("/updateTokens/:id", (req, res) => {
+    if (req.method == 'POST') {
+        var jsonString = '';
+
+        req.on('data', function (data) {
+            jsonString += data;
+        });
+
+        req.on('end', function () {
+            jsonString_parsed = JSON.parse(jsonString)
+            console.log(jsonString_parsed);
+            
+
+            // Update token based on DeviceIDJSON, tokensJSON.
+            MongoClient.connect(url, function(err, db) {
+                if (err) throw err;
+                var dbo = db.db("test");
+                console.log(jsonString_parsed["DeviceIDJSON"]);
+                console.log(jsonString_parsed["tokensJSON"]);
+                var myquery = { deviceID: jsonString_parsed["DeviceIDJSON"] };
+                var newvalues = { $set: {tokens: jsonString_parsed["tokensJSON"] } };
+                dbo.collection("userdatas").updateOne(myquery, newvalues, function(err, res) {
+                  if (err) throw err;
+                  console.log("1 document updated");
+                  db.close();
+                });
+              });
 
         });
     }
