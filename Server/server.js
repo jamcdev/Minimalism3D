@@ -223,6 +223,38 @@ app.post("/updateTokens/:id", (req, res) => {
 
 });
 
+// Remove item from server
+app.post("/deleteItem/:id", (req, res) => {
+    if (req.method == 'POST') {
+        var jsonString = '';
+
+        req.on('data', function (data) {
+            jsonString += data;
+        });
+
+        req.on('end', function () {
+            // jsonString_parsed = JSON.parse(jsonString)
+            // console.log(jsonString_parsed);
+            console.log(jsonString);
+            
+            // Delete via phonenumber or object ID
+            MongoClient.connect(url, function(err, db) {
+                if (err) throw err;
+                var dbo = db.db("test");
+                var myquery = { itemPhoneNumber: jsonString };
+                dbo.collection("itemposts").deleteOne(myquery, function(err, obj) {
+                  if (err) throw err;
+                  console.log("1 document deleted: " + jsonString);
+                  db.close();
+                });
+              });
+
+
+        });
+    }
+
+});
+
 // Start server.
 
 app.listen(port || 8000, () => {
