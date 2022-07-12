@@ -1133,6 +1133,8 @@ Transform:
   - {fileID: 1001638326}
   - {fileID: 535385711}
   - {fileID: 453170558}
+  - {fileID: 1014785699}
+  - {fileID: 1919534871}
   m_Father: {fileID: 1267328878}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3466,6 +3468,55 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1014785698
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1014785699}
+  - component: {fileID: 1014785700}
+  m_Layer: 0
+  m_Name: AdDisplayObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1014785699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014785698}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 323178993}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1014785700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014785698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f064985d5866f04991ca6ce3f77f4c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGameIdAndroid: 4835917
+  myGameIdIOS: 4835916
+  adUnitIdAndroid: Interstitial_Android
+  adUnitIdIOS: Interstitial_iOS
+  myAdUnitId: 
+  adStarted: 0
 --- !u!1 &1018046773
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,6 +3941,18 @@ MonoBehaviour:
       - m_Target: {fileID: 513108262}
         m_TargetAssemblyTypeName: PutPlaceholder, Assembly-CSharp
         m_MethodName: togglePlace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1919534872}
+        m_TargetAssemblyTypeName: RewardedAdDisplay, Assembly-CSharp
+        m_MethodName: OnInitializationComplete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5717,6 +5780,57 @@ Transform:
   m_Father: {fileID: 333458990}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1919534870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919534871}
+  - component: {fileID: 1919534872}
+  m_Layer: 0
+  m_Name: RewardedAdDisplayObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1919534871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919534870}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 323178993}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1919534872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919534870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669e48444d8b8e244adf6a1b01886075, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myGameIdAndroid: 4835917
+  myGameIdIOS: 4835916
+  adUnitIdAndroid: Rewarded_Android
+  adUnitIdIOS: Rewarded_iOS
+  myAdUnitId: 
+  myAdStatus: 
+  adStarted: 0
+  adCompleted: 0
 --- !u!1 &1923838460
 GameObject:
   m_ObjectHideFlags: 0
