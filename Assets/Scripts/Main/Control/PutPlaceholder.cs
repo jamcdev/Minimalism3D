@@ -22,6 +22,8 @@ public class PutPlaceholder : MonoBehaviour
 
     public GameObject redPlaceholder;
 
+    public GameObject NotifyCanvas;
+
     private void Start()
     {
         timeHeldDown = 0.0f;
@@ -32,6 +34,7 @@ public class PutPlaceholder : MonoBehaviour
     public void togglePlace()
     {
         isPlaceNowToggled = true;
+        NotifyCanvas.SetActive(true);
     }
 
     // Update is called once per frame
@@ -76,6 +79,8 @@ public class PutPlaceholder : MonoBehaviour
                         Debug.Log("PutPlaceholder: isPlaceNowToggled " + isPlaceNowToggled);
                         if (PlayerInfo.tokens > 0 && isPlaceNowToggled == true)
                         {
+                            NotifyCanvas.SetActive(false);
+
                             //numPlaceholders++;
                             isPlaceNowToggled = false;
                             PlayerInfo.tokens--;

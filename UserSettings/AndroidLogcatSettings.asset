@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "RF8N11WMZ0L",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "RF8N11WMZ0L",
+        "name": "com.android.game",
+        "processId": 9044,
         "exited": false
     },
     "m_SelectedPriority": 1,
@@ -37,6 +37,24 @@
             "name": "com.android.game",
             "processId": 8346,
             "exited": true
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 2963,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 4857,
+            "exited": false
+        },
+        {
+            "deviceId": "RF8N11WMZ0L",
+            "name": "com.android.game",
+            "processId": 9044,
+            "exited": false
         }
     ],
     "m_Tags": {
